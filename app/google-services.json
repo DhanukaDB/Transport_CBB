@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "196807987543",
+    "project_id": "transportcbb",
+    "storage_bucket": "transportcbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196807987543:android:be007a4bd69632864f6e12",
+        "android_client_info": {
+          "package_name": "com.cbb.transportcbb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196807987543-te3mffavml6qlll3r8a9s4m18p11cask.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzn1BFY93NK462aANnMvjlageATt0edbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196807987543-te3mffavml6qlll3r8a9s4m18p11cask.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
