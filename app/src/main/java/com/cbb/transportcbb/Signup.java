@@ -37,13 +37,15 @@ public class Signup extends AppCompatActivity {
 
         userob = new User();
 
+        //button dirrection
+
         btn_2signin = findViewById(R.id.btn_2signin);
         btn_2signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                startActivity(new Intent(Signup.this, MainActivity.class));
+                startActivity(new Intent(Signup.this, home.class));
             }
         });
 
@@ -79,7 +81,7 @@ public class Signup extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(Signup.this, MainActivity.class));
+                startActivity(new Intent(Signup.this, home.class));
             }
 
 
@@ -87,4 +89,9 @@ public class Signup extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Number Format Exception", Toast.LENGTH_LONG).show();
         }
     }
+
 }
+
+
+
+

@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">CBB App 🚌 </string>
+    <string name="title_activity_bookings">Bookings</string>
+
+    <string name="btnsignup">signup</string>
+
+
+
+    <string-array name="from_array">
+        <item>Colombo</item>
+        <item>Moratuwa</item>
+        <item>Wellawatta</item>
+        <item>Colpitty</item>
+    </string-array>
+
+
+
+    <string-array name="to_array">
+        <item>Kandy</item>
+        <item>Jaffna</item>
+        <item>Batticola</item>
+        <item>Galle</item>
+        <item>Matara</item>
+    </string-array>
+
+
+
+
+    <string-array name="qty_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="cat_array">
+    <item>adult</item>
+    <item>kids</item>
+    </string-array>
+
 </resources>
