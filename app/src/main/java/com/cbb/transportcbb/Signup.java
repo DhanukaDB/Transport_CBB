@@ -86,12 +86,26 @@ public class Signup extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_LONG).show();
 
                 startActivity(new Intent(Signup.this, home.class));
+
+                ClearControls();
+
             }
 
 
         } catch (NumberFormatException e) {
             Toast.makeText(getApplicationContext(), "Number Format Exception", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void ClearControls() {
+        editTextTextPersonName.setText("");
+        editTextTextEmailAddress3.setText("");
+        editTextPhone.setText("");
+        editTextTextPassword2.setText("");
+        editTextTextPersonName4.setText("");
+        editTextTextPersonName4.setText("");
+
+
     }
 
 }

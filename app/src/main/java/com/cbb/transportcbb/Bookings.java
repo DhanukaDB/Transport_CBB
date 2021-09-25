@@ -26,6 +26,7 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
     Bookdetails bkdob;
 
     DatabaseReference database;
+    FirebaseDatabase root;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,11 +178,32 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
                 bkdob.setEmail(Username.getText().toString().trim());
                 bkdob.setQty(spinner.getSelectedItem().toString().trim());
 
-                database.push().setValue(bkdob);
+                String Email = Username.getText().toString().trim();
+                String From = spinner3.getSelectedItem().toString().trim();
+                String Date = editTextDate.getText().toString().trim();
+                String Time = editTextTime.getText().toString().trim();
+                String To = spinner2.getSelectedItem().toString().trim();
+                String Category = spinner1.getSelectedItem().toString().trim();
+                String Qty = spinner.getSelectedItem().toString().trim();
+
+                database.child(Email).setValue(bkdob);
 
                 Toast.makeText(getApplicationContext(),"Booking Success",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(Bookings.this, home.class));
+                Intent intent = new Intent(getApplicationContext(), BookingSuccess.class);
+
+                intent.putExtra("email",Email);
+                intent.putExtra("from",From);
+                intent.putExtra("to",Date);
+                intent.putExtra("date",Time);
+                intent.putExtra("time",To);
+                intent.putExtra("category",Category);
+                intent.putExtra("qty",Qty);
+
+                Toast.makeText(getApplicationContext()," Successfully Logged in",Toast.LENGTH_LONG).show();
+                startActivity(intent);
+
+                ClearControls();
             }
 
 
@@ -189,6 +211,13 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
             Toast.makeText(getApplicationContext(), "Number Format Exception", Toast.LENGTH_LONG).show();
         }
 
+
+
+    }
+    public void ClearControls() {
+        editTextDate.setText("");
+        editTextTime.setText("");
+        Username.setText("");
 
 
     }

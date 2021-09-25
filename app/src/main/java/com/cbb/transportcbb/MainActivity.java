@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -85,24 +86,30 @@ public class MainActivity extends AppCompatActivity {
                         String nameFromDB = dataSnapshot.child(enteredUsername).child("name").getValue(String.class);
                         String nicFromDB = dataSnapshot.child(enteredUsername).child("nic").getValue(String.class);
 
+
                         Intent intent = new Intent(getApplicationContext(),UserProfile.class);
 
                         intent.putExtra("name",nameFromDB);
                         intent.putExtra("email",emailFromDB);
                         intent.putExtra("nic",nicFromDB);
                         intent.putExtra("mobileNum",mobileNumFromDB);
+                        intent.putExtra("password",passwordFromDB);
 
+                        saveToDevice(nameFromDB, emailFromDB, nicFromDB, mobileNumFromDB, passwordFromDB);
 
                         Toast.makeText(getApplicationContext()," Successfully Logged in",Toast.LENGTH_LONG).show();
                         startActivity(intent);
 
+                        ClearControls();
                     }else {
 
                         Toast.makeText(getApplicationContext(),"Password Error",Toast.LENGTH_LONG).show();
+                        ClearControls();
                     }
                 }else {
 
                     Toast.makeText(getApplicationContext(),"Username Error",Toast.LENGTH_LONG).show();
+                    ClearControls();
                 }
 
             }
@@ -112,9 +119,31 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+
+
+
     }
 
+    private void saveToDevice(String name, String email, String nic, String mobile, String password) {
+        SharedPreferences sharedPref = getSharedPreferences("myPref", MODE_PRIVATE);
+        sharedPref.edit().putString("name", name).apply();
+        sharedPref.edit().putString("email", email).apply();
+        sharedPref.edit().putString("nic", nic).apply();
+        sharedPref.edit().putString("mobile", mobile).apply();
+        sharedPref.edit().putString("password", password).apply();
+    }
 
+    public void ClearControls() {
+        editTextTextEmailAddress2.setText("");
+        editTextTextPassword.setText("");
+
+
+
+    }
 
 
 }
