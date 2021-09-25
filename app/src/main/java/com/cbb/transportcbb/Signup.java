@@ -20,6 +20,7 @@ public class Signup extends AppCompatActivity {
 
     User userob;
 
+    FirebaseDatabase rootNode;
     DatabaseReference db;
 
     @Override
@@ -41,6 +42,7 @@ public class Signup extends AppCompatActivity {
 
         btn_2signin = findViewById(R.id.btn_2signin);
         btn_2signin.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -56,8 +58,9 @@ public class Signup extends AppCompatActivity {
 
     public void Signup(View view) {
 
+        rootNode = FirebaseDatabase.getInstance();
+        db = rootNode.getReference("User");
 
-        db = FirebaseDatabase.getInstance().getReference().child("User");
 
         try {
             if(TextUtils.isEmpty(editTextTextPersonName.getText().toString().trim())){
@@ -76,8 +79,9 @@ public class Signup extends AppCompatActivity {
                 userob.setMobileNum(editTextPhone.getText().toString().trim());
                 userob.setPassword(editTextTextPassword2.getText().toString().trim());
                 userob.setNic(editTextTextPersonName4.getText().toString().trim());
+                String Nic = editTextTextPersonName4.getText().toString().trim();
 
-                db.push().setValue(userob);
+                db.child(Nic).setValue(userob);
 
                 Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_LONG).show();
 

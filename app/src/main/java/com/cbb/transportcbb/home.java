@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class home extends AppCompatActivity {
 
-    Button btnbmn;
+    Button btnbmn,button5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,17 @@ public class home extends AppCompatActivity {
 
 
                 startActivity(new Intent(home.this, Bookings.class));
+            }
+        });
+
+        button5 = findViewById(R.id.button5);
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(home.this, UserProfile.class));
             }
         });
     }

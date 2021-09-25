@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
         android:text="Sign in"
+        android:onClick="Signin"
         android:textAllCaps="false"
         android:textColor="#F6F5F5"
         app:backgroundTint="#A81C1F37"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cbb.transportcbb" >
+    package="com.cbb.transportcbb">
 
     <application
         android:allowBackup="true"
@@ -8,15 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_background"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TransportCBB" >
-
-
-        <activity android:name=".Bookings"
-         android:parentActivityName=".home" />
-
+        android:theme="@style/Theme.TransportCBB">
+        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".BookingSuccess" />
+        <activity
+            android:name=".Bookings"
+            android:parentActivityName=".home" />
         <activity android:name=".home" />
         <activity android:name=".Signup" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

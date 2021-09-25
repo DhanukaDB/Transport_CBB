@@ -55,7 +55,17 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner3.setAdapter(adapter3);
-        spinner3.setOnItemSelectedListener(this);
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinner3.setSelection(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
@@ -66,7 +76,17 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner2.setAdapter(adapter4);
-        spinner2.setOnItemSelectedListener(this);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
@@ -78,7 +98,17 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
@@ -90,7 +120,17 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner1.setAdapter(adapter1);
-        spinner1.setOnItemSelectedListener(this);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
@@ -114,28 +154,28 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         database = FirebaseDatabase.getInstance().getReference().child("Bookings");
 
         try {
-            if(TextUtils.isEmpty(spinner3.getOnItemSelectedListener().toString().trim())){
+            if(TextUtils.isEmpty(spinner3.getSelectedItem().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter Your Name",Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(spinner2.getOnItemSelectedListener().toString().trim())){
+            } else if (TextUtils.isEmpty(spinner2.getSelectedItem().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter Your Email",Toast.LENGTH_LONG).show();
             } else if (TextUtils.isEmpty(editTextDate.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter Your Mobile Number",Toast.LENGTH_LONG).show();
             } else if (TextUtils.isEmpty(editTextTime.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(spinner1.getOnItemSelectedListener().toString().trim())){
+            } else if (TextUtils.isEmpty(spinner1.getSelectedItem().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
             }else if (TextUtils.isEmpty(Username.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
-            }else if (TextUtils.isEmpty(spinner.getOnItemSelectedListener().toString().trim())){
+            }else if (TextUtils.isEmpty(spinner.getSelectedItem().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
             } else {
-                bkdob.setFrom(spinner3.getOnItemSelectedListener().toString().trim());
-                bkdob.setTo(spinner2.getOnItemSelectedListener().toString().trim());
+                bkdob.setFrom(spinner3.getSelectedItem().toString().trim());
+                bkdob.setTo(spinner2.getSelectedItem().toString().trim());
                 bkdob.setDate(editTextDate.getText().toString().trim());
                 bkdob.setTime(editTextTime.getText().toString().trim());
-                bkdob.setCategory(spinner1.getOnItemSelectedListener().toString().trim());
+                bkdob.setCategory(spinner1.getSelectedItem().toString().trim());
                 bkdob.setEmail(Username.getText().toString().trim());
-                bkdob.setQty(spinner.getOnItemSelectedListener().toString().trim());
+                bkdob.setQty(spinner.getSelectedItem().toString().trim());
 
                 database.push().setValue(bkdob);
 
