@@ -30,7 +30,7 @@
         android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_2signin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -98,7 +98,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NIC"
+        android:text="Username"
         android:textColor="#4E4B4B"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"

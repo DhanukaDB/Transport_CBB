@@ -126,4 +126,13 @@ public class UserProfile extends AppCompatActivity {
        });
 
     }
+    public void ClearControls() {
+        editTextTextPersonName2.setText("");
+        editTextTextPersonName3.setText("");
+        editTextTextPersonName5.setText("");
+        editTextTextPersonName6.setText("");
+        editTextTextPersonName7.setText("");
+        editTextTextPersonName5.setText("");
+
+    }
 }

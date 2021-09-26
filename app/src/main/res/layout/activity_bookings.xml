@@ -108,7 +108,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:ems="10"
-      android:hint="          username"
+      android:hint="          Username"
       android:inputType="text"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -178,33 +178,7 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.194" />
 
-  <EditText
-      android:id="@+id/editTextDate"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="        dd/mm/year"
-      android:inputType="date"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.925"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.43" />
 
-  <EditText
-      android:id="@+id/editTextTime"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="           10.00am"
-      android:inputType="time"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.913"
-      app:layout_constraintStart_toStartOf="@+id/textView25"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.543" />
 
   <Button
       android:id="@+id/btn_pr_bk"
@@ -218,5 +192,72 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.907" />
+
+  <Button
+      android:id="@+id/getdateBtn"
+      android:layout_width="106dp"
+      android:layout_height="44dp"
+      android:onClick="GetDate"
+      android:text="GetDate"
+      android:textAllCaps="false"
+      app:backgroundTint="#2A587A"
+      app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
+      app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="@+id/editTextDate" />
+
+  <Button
+      android:id="@+id/getdateBtn2"
+      android:layout_width="106dp"
+      android:layout_height="44dp"
+      android:onClick="GetDate"
+      android:text="Get Date"
+      android:textAllCaps="false"
+      app:backgroundTint="#2A587A"
+      app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
+      app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="@+id/editTextDate" />
+
+  <Button
+      android:id="@+id/getTime"
+      android:layout_width="106dp"
+      android:layout_height="44dp"
+      android:onClick="GetTime"
+      android:text="Get Time"
+      android:textAllCaps="false"
+      app:backgroundTint="#2A587A"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.842"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.557" />
+
+  <TextView
+      android:id="@+id/editTextTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Current date"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/getTime"
+      app:layout_constraintEnd_toEndOf="@+id/getTime"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="@+id/getTime"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+      android:id="@+id/editTextDate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Current date"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.815"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.389" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
