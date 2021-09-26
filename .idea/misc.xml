@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Transport_CBB31535/app/src/main/res/layout/activity_card.xml" value="0.2" />
+        <entry key="..\:/Transport_CBB31535/app/src/main/res/layout/activity_feedback.xml" value="0.1" />
+        <entry key="..\:/Transport_CBB31535/app/src/main/res/layout/activity_hire.xml" value="0.11666666666666667" />
+        <entry key="..\:/Transport_CBB31535/app/src/main/res/layout/hires.xml" value="0.1" />
         <entry key="..\:/Transport_CBB431531/app/src/main/res/layout/activity_success.xml" value="0.1" />
       </map>
     </option>

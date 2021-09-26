@@ -12,6 +12,13 @@
         <activity android:name=".UserProfile"></activity>
         <activity android:name=".BookingSuccess" />
         <activity
+            android:name=".CardActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ManageBusTime"
+            android:exported="true"></activity>
+        <activity
             android:name=".Bookings"
             android:parentActivityName=".home" />
         <activity android:name=".home" />

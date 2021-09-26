@@ -42,7 +42,7 @@ public class FeedbackActivity extends AppCompatActivity {
         String email = tex_Email.getText().toString();
         String feedback = tex_Feed.getText().toString();
 
-        com.example.realtime.Feedback feedback1 =  new com.example.realtime.Feedback(email, feedback);
+        Feedback feedback1 =  new Feedback(email, feedback);
         DbFeedRef.push().setValue(feedback1);
         Toast.makeText(FeedbackActivity.this, "Submitted the feedback successfully" , Toast.LENGTH_SHORT).show();
     }

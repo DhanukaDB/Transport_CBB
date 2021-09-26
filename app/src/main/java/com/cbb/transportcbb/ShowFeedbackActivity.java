@@ -1,11 +1,13 @@
 package com.cbb.transportcbb;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,33 +20,34 @@ import java.util.List;
 
 public class ShowFeedbackActivity extends AppCompatActivity {
 
+    ListView listFeedbackView;
+    List<Feedback> feedbackList;
 
-    private RecyclerView feedBackRecycler;
-    private DatabaseReference dbFeed;
-    private FeedAdapter feedAdapter;
-    private List<FeedbackModel> feedbackModelList;
+    DatabaseReference feedbackDbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_feedback);
 
-        feedBackRecycler = findViewById(R.id.feedbackRecyclerView);
-        feedBackRecycler.setHasFixedSize(true);
-        feedBackRecycler.setLayoutManager(new LinearLayoutManager(this));
+        listFeedbackView = findViewById(R.id.listFeedbackView);
+        feedbackList = new ArrayList<>();
 
-        dbFeed = FirebaseDatabase.getInstance().getReference().child("Feedbacks");
-        feedbackModelList = new ArrayList<>();
-        feedAdapter = new FeedAdapter(this, feedbackModelList);
-        feedBackRecycler.setAdapter(feedAdapter);
+        feedbackDbRef = FirebaseDatabase.getInstance().getReference("Feedbacks");
 
-        dbFeed.addValueEventListener(new ValueEventListener() {
+        feedbackDbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    FeedbackModel feedbackModel = dataSnapshot.getValue(FeedbackModel.class);
-                    feedbackModelList.add(feedbackModel);
+                feedbackList.clear();
+
+                for (DataSnapshot feedbackDatasnap: snapshot.getChildren()){
+
+                    Feedback feedback = feedbackDatasnap.getValue(Feedback.class);
+                    feedbackList.add(feedback);
                 }
+
+                FeedbackAdapter feedbackAdapter = new FeedbackAdapter(ShowFeedbackActivity.this, feedbackList);
+                listFeedbackView.setAdapter(feedbackAdapter);
             }
 
             @Override
@@ -52,7 +55,16 @@ public class ShowFeedbackActivity extends AppCompatActivity {
 
             }
         });
-    }
 
 
+        listFeedbackView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ShowFeedbackActivity.this, FeedbackUpdateActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
+}
