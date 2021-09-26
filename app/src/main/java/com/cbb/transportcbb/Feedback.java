@@ -10,6 +10,9 @@ public class Feedback {
         this.feedback = feedback;
     }
 
+    public Feedback() {
+    }
+
     public String getEmail() {
         return email;
     }

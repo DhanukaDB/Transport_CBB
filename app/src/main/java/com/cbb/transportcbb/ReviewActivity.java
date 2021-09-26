@@ -45,7 +45,7 @@ public class ReviewActivity extends AppCompatActivity {
         String email = Rev_Email.getText().toString();
         String other = Rev_Other.getText().toString();
 
-        com.example.realtime.Review review = new com.example.realtime.Review(rate, email, other);
+        Review review = new Review(rate, email, other);
         dbReviewRef.push().setValue(review);
         Toast.makeText(ReviewActivity.this ,"Review inserted", Toast.LENGTH_SHORT).show();
     }

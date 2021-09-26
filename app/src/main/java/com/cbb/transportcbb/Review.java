@@ -12,6 +12,9 @@ public class Review {
         this.other = other;
     }
 
+    public Review() {
+    }
+
     public String getRate() {
         return rate;
     }
