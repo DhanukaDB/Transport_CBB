@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class home extends AppCompatActivity {
 
-    Button btnbmn,button5;
+    Button btnbmn,button5,btntt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,15 @@ public class home extends AppCompatActivity {
 
 
                 startActivity(new Intent(home.this, UserProfile.class));
+            }
+        });
+
+        btntt = findViewById(R.id.btntt);
+
+        btntt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(home.this, ManageBusTime.class));
             }
         });
     }
