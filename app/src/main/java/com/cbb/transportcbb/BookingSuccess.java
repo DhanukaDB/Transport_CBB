@@ -45,6 +45,14 @@ public class BookingSuccess extends AppCompatActivity {
             }
         });
 
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BookingSuccess.this, CardActivity.class));
+            }
+        });
+
         editTextTextPersonName10 = findViewById(R.id.editTextTextPersonName10);
         editTextTextPersonName11 = findViewById(R.id.editTextTextPersonName11);
         editTextTextPersonName13 = findViewById(R.id.editTextTextPersonName13);

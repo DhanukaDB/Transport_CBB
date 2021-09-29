@@ -120,7 +120,7 @@
 
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnDoneBookings"
         android:layout_width="110dp"
         android:layout_height="58dp"
         android:layout_marginStart="28dp"
@@ -154,7 +154,7 @@
         android:layout_width="106dp"
         android:layout_height="58dp"
         android:focusable="false"
-        android:text="contact-us 📲"
+        android:text="about-us 📲"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
