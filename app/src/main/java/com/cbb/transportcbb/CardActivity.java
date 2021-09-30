@@ -41,7 +41,7 @@ public class CardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertPaymentData();
-                Intent intent = new Intent(CardActivity.this, SuccessActivity.class);
+                Intent intent = new Intent(CardActivity.this, PaymentSuccessActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,6 +59,6 @@ public class CardActivity extends AppCompatActivity {
 
         CardPayments cardPayments = new CardPayments(name,address,number, card,expiry,ccv);
         paymentDbRef.push().setValue(cardPayments);
-        Toast.makeText(CardActivity.this, "Data inserted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(CardActivity.this, "Payment details recorded for additional purposes...", Toast.LENGTH_SHORT).show();
     }
 }

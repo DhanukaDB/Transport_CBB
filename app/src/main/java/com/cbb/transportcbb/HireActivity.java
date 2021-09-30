@@ -2,6 +2,7 @@ package com.cbb.transportcbb;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -115,6 +117,9 @@ public class HireActivity extends AppCompatActivity {
                 userMap.put("Person_Count", Person_Count);
 
                 root.push().setValue(userMap);
+                Toast.makeText(HireActivity.this, "Details were recorded successfully.", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(HireActivity.this, home.class));
             }
         });
     }
