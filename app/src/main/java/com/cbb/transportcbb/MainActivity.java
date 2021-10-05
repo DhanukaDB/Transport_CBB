@@ -88,12 +88,18 @@ public class MainActivity extends AppCompatActivity {
 
 
                         Intent intent = new Intent(getApplicationContext(),UserProfile.class);
+                        Intent intent1 = new Intent(getApplicationContext(),UserProfile.class);
+
 
                         intent.putExtra("name",nameFromDB);
                         intent.putExtra("email",emailFromDB);
                         intent.putExtra("nic",nicFromDB);
                         intent.putExtra("mobileNum",mobileNumFromDB);
                         intent.putExtra("password",passwordFromDB);
+
+
+                        intent1.putExtra("nic",nicFromDB);
+
 
                         saveToDevice(nameFromDB, emailFromDB, nicFromDB, mobileNumFromDB, passwordFromDB);
 
@@ -120,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        editTextTextEmailAddress2.setText("");
+        editTextTextPassword.setText("");
 
 
 
@@ -127,15 +135,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
     private void saveToDevice(String name, String email, String nic, String mobile, String password) {
         SharedPreferences sharedPref = getSharedPreferences("myPref", MODE_PRIVATE);
         sharedPref.edit().putString("name", name).apply();
         sharedPref.edit().putString("email", email).apply();
         sharedPref.edit().putString("nic", nic).apply();
-        sharedPref.edit().putString("mobile", mobile).apply();
+        sharedPref.edit().putString("mobileNum", mobile).apply();
         sharedPref.edit().putString("password", password).apply();
     }
+
+
+
+
 
     public void ClearControls() {
         editTextTextEmailAddress2.setText("");
