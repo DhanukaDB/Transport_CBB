@@ -76,14 +76,14 @@ public class BookingSuccess extends AppCompatActivity {
         String user_qty = intent.getStringExtra("qty");
 
 
-        editTextTextPersonName10.setText(user_email);
-        editTextTextPersonName11.setText(user_from);
-        editTextTextPersonName13.setText(user_to);
-        editTextTextPersonName7.setText(user_date);
-        editTextTextPersonName14.setText(user_time);
-        editTextTextPersonName13.setText(user_category);
-        editTextTextPersonName9.setText(user_date);
-        editTextTextPersonName12.setText(user_qty);
+        editTextTextPersonName14.setText(user_from);
+        editTextTextPersonName9.setText(user_to);
+        editTextTextPersonName10.setText(user_date);
+        editTextTextPersonName7.setText(user_time);
+        editTextTextPersonName12.setText(user_category);
+        editTextTextPersonName13.setText(user_email);
+        editTextTextPersonName11.setText(user_qty);
+
     }
 
     public void cancelbk(View view) {

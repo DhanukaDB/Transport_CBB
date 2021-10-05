@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -185,6 +186,9 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
             }else if (TextUtils.isEmpty(spinner.getSelectedItem().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
             } else {
+
+                showUserdata();
+
                 bkdob.setFrom(spinner3.getSelectedItem().toString().trim());
                 bkdob.setTo(spinner2.getSelectedItem().toString().trim());
                 bkdob.setDate(editTextDate.getText().toString().trim());
@@ -275,6 +279,27 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
             }
         },currentHr,currentMin,false);
         dialog.show();
+
+    }
+
+    private void showUserdata() {
+
+        //from sign in
+        Intent intent1 = getIntent();
+
+        String user_nic = intent1.getStringExtra("nic");
+
+        //from device
+        if (user_nic == null) {
+            SharedPreferences sharedPref = getSharedPreferences("myPref", MODE_PRIVATE);
+
+            user_nic = sharedPref.getString("nic", "");
+
+        }
+
+
+        Username.setText(user_nic);
+
 
     }
 
