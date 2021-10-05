@@ -37,6 +37,8 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
     DatabaseReference database;
     FirebaseDatabase root;
 
+    User userob;
+
     int day;
     int month;
     int year;
@@ -49,6 +51,9 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookings);
 
+        database = FirebaseDatabase.getInstance().getReference("User");
+
+        userob = new User();
 
         spinner3 = findViewById(R.id.spinner3);
         spinner2 = findViewById(R.id.spinner2);
@@ -60,7 +65,10 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
 
         btn_pr_bk = findViewById(R.id.btn_pr_bk);
 
+        showUserdata();
+
         bkdob = new Bookdetails();
+
 
         //dropdown buttons
 
@@ -187,7 +195,6 @@ public class Bookings extends AppCompatActivity implements AdapterView.OnItemSel
                 Toast.makeText(getApplicationContext(),"Enter a Password",Toast.LENGTH_LONG).show();
             } else {
 
-                showUserdata();
 
                 bkdob.setFrom(spinner3.getSelectedItem().toString().trim());
                 bkdob.setTo(spinner2.getSelectedItem().toString().trim());
