@@ -87,7 +87,7 @@ public class Signup extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(Signup.this, home.class));
+                startActivity(new Intent(Signup.this, MainActivity.class));
 
                 ClearControls();
 
