@@ -4,42 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/btn_Calendar"
     tools:context=".FeedbackActivity">
 
     <EditText
         android:id="@+id/tex_Feed"
-        android:layout_width="267dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="341dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
+        android:hint="Don't forget to give a feedback"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tex_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <EditText
         android:id="@+id/tex_Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
+        android:hint="someone@example.com"
         android:inputType="textEmailAddress"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textView28"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <Button
         android:id="@+id/btn_Feed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:text="Submit"
+        android:layout_width="137dp"
+        android:layout_height="52dp"
+        android:text="Place"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tex_Feed"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.525" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="334dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:text="Place Your Feedbacks"
+        android:textColor="#0C0A0A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="369dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:text="***Share your thoughts and make us improve"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center|left"
+        android:text="Email ID:"
+        android:textColor="@color/material_on_background_emphasis_high_type"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="213dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center|left"
+        android:text="Description:"
+        android:textColor="@color/material_on_surface_emphasis_high_type"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 
-    Button button4,button8;
+    Button button4,button8, showFeedback;
 
     TextView editTextTextPersonName2,editTextTextPersonName3,editTextTextPersonName5,editTextTextPersonName6,editTextTextPersonName7;
 
@@ -36,6 +36,14 @@ public class UserProfile extends AppCompatActivity {
         userob = new User();
 
         button4 = findViewById(R.id.button4);
+        showFeedback = findViewById(R.id.buttonshowFeedback);
+
+        showFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserProfile.this, ShowFeedbackActivity.class));
+            }
+        });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override

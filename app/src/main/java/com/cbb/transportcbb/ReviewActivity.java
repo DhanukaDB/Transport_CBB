@@ -1,5 +1,6 @@
 package com.cbb.transportcbb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,7 @@ public class ReviewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertReviewData();
+                startActivity(new Intent(ReviewActivity.this, RetrieveCardActivity.class));
             }
         });
 
@@ -47,6 +49,6 @@ public class ReviewActivity extends AppCompatActivity {
 
         Review review = new Review(rate, email, other);
         dbReviewRef.push().setValue(review);
-        Toast.makeText(ReviewActivity.this ,"Review inserted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ReviewActivity.this ,"Review submitted", Toast.LENGTH_SHORT).show();
     }
 }

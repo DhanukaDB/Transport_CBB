@@ -8,53 +8,113 @@
 
     <EditText
         android:id="@+id/tex_RevRate"
-        android:layout_width="277dp"
+        android:layout_width="241dp"
         android:layout_height="51dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
-        android:hint="Rate the experience: Worst-Best"
+        android:hint="Worst-Best"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/tex_RevEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="246dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:hint="Enter email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
         app:layout_constraintTop_toBottomOf="@+id/tex_RevRate" />
 
     <EditText
         android:id="@+id/tex_RevOther"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_width="249dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Other comments"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tex_RevEmail" />
 
     <Button
         android:id="@+id/btn_SubmitRev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="Submit"
+        android:layout_width="188dp"
+        android:layout_height="53dp"
+        android:text="Place Review"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tex_RevOther"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:text="Driver Review"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="138dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="72dp"
+        android:gravity="left|center_vertical"
+        android:text="Rate the experience:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="138dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="68dp"
+        android:gravity="left|center_vertical"
+        android:text="Email ID:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="147dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center|left"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tex_RevOther"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="380dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="20dp"
+        android:text="Your reviews are the advices we get from you."
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tex_RevOther" />
 </androidx.constraintlayout.widget.ConstraintLayout>
