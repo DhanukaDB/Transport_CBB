@@ -1,5 +1,6 @@
 package com.cbb.transportcbb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,14 +62,10 @@ public class RetrieveCardActivity extends AppCompatActivity {
 
         //Making for Update the Details
 
-        myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-                CardPayments cardPayments = cardPaymentsList.get(position);
-
-
-                return false;
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(RetrieveCardActivity.this, ReviewActivity.class));
             }
         });
     }
